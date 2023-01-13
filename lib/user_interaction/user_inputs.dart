@@ -76,7 +76,7 @@ void main() {
       successMessage: '\nRenda mensal cadastrado com sucesso!',
       validator: monthlyIncomeValidation);
 
-  //customerChooseAccount();
+  customerChooseAccount();
 }
 
 String customPrint({
@@ -104,24 +104,14 @@ String customPrint({
   return value!;
 }
 
-
-/*String customerChooseAccount() {
-  String userChoose = stdin.readLineSync()!;
-  var userInput = '';
-  print("Agora escolha o tipo de conta desejado.");
-  print(
-      "Digite 'poupanca' para o tipo de Conta Poupança, ou digite 'corrente' para o tipo de Conta Corrente");
-
+String? customerChooseAccount() {
+  String? userInput = '';
   do {
-    userInput = userChoose;
-    if (userChoose == 'poupanca') {
-      print(userChoose);
-      return 'Ok, Conta Poupança escolhido!';
-    } else if (userChoose == 'corrente') {
-      print(userChoose);
-      return 'Ok, Conta Corrente escolhida!';
-    }
-  } while (userInput != 'poupanca' || userInput != 'corrente');
-  return 'Tipo de conta não escolhida!';
+    stdout.write(
+        'Hora de escolher o tipo de conta!\nDigite poupanca para Conta Poupança ou corrente para Conta Corrente\n');
+    userInput = stdin.readLineSync();
+    //print(userInput);
+  } while (userInput != 'poupanca' && userInput != 'corrente');
+  print('Fim');
+  
 }
-*/
