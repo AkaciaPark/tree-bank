@@ -12,7 +12,7 @@ import 'package:desafio_um/validations/required_field_validation.dart';
 
 void main() {
   print("Seja bem vindo ao TreeBank!");
-/*
+
   final inputFullName = customPrint(
       message: '\nDigite o seu nome completo:',
       successMessage: '\nNome cadastrado com sucesso!',
@@ -34,7 +34,7 @@ void main() {
       validator: cpfValidation);
 
   final inputNumericPassword = customPrint(
-      message: '\nDigite uma senha numérica:',
+      message: '\nDigite uma senha numérica de 8 dígitos:',
       successMessage: '\nSenha numérica cadastrado com sucesso!',
       validator: numericPasswordValidation);
 
@@ -79,11 +79,10 @@ void main() {
       validator: monthlyIncomeValidation);
 
   customerChooseAccount();
-  */
-  testeDeNumeroAleatorio();
+
+  generateRandomNumbers();
 }
 
-/*
 String customPrint({
   required String message,
   required String? Function(String?) validator,
@@ -117,22 +116,56 @@ String? customerChooseAccount() {
     userInput = stdin.readLineSync();
     //print(userInput);
   } while (userInput != 'poupanca' && userInput != 'corrente');
-  print('Fim');
-  
 }
-*/
-void testeDeNumeroAleatorio() {
-  var numerosGerados = 0;
-  Random numeroAleatorio = Random();
-  var listaNumerosAleatorios = [numerosGerados];
+
+void generateRandomNumbers() {
+  var generatedAgencyNumber = 0;
+  Random randomAgencyNumber = Random();
+  var listOfAgencyRandomNumbers = [generatedAgencyNumber];
 
   for (int i = 0; i < 7; i++) {
-    numerosGerados = numeroAleatorio.nextInt(10);
-    print(numerosGerados);
-    listaNumerosAleatorios.add(numerosGerados);
+    //for para geração de número aleatório da agência
+    generatedAgencyNumber = randomAgencyNumber.nextInt(10);
+    //print(generatedAgencyNumber);
+    listOfAgencyRandomNumbers.add(generatedAgencyNumber);
   }
 
-  print(listaNumerosAleatorios);
-  listaNumerosAleatorios.removeAt(0);
-  print(listaNumerosAleatorios);
+  //print(listOfAgencyRandomNumbers);
+  listOfAgencyRandomNumbers.removeAt(0);
+  String agencyRandomNumber = listOfAgencyRandomNumbers.join('');
+  stdout.write('O número da sua agência é $agencyRandomNumber\n');
+
+  //print('-----------');
+  var generatedBankCode = 0;
+  Random randomBankCode = Random();
+  var listOfRandomBankCode = [generatedBankCode];
+
+  for (int i = 0; i < 3; i++) {
+    //for para o código bancário
+    generatedBankCode = randomBankCode.nextInt(10);
+    //print(generatedBankCode);
+    listOfRandomBankCode.add(generatedBankCode);
+  }
+
+  //print(listOfRandomBankCode);
+  listOfRandomBankCode.removeAt(0);
+  String bankCode = listOfRandomBankCode.join('');
+  stdout.write('O código bancário é: $bankCode\n');
+  //print('teste');
+
+  var generatedNumberAccount = 0;
+  Random randomNumberAccount = Random();
+  var listOfRandomNumberAccount = [generatedNumberAccount];
+
+  for (int i = 0; i < 7; i++) {
+    //for para a conta bancária
+    generatedNumberAccount = randomNumberAccount.nextInt(10);
+    listOfRandomNumberAccount.add(generatedNumberAccount);
+  }
+
+  listOfRandomNumberAccount.removeAt(0);
+  String numberAccount = listOfRandomNumberAccount.join('');
+  stdout.write('O seu número bancário é $numberAccount\n');
+
+  stdout.write('Saldo inicial: R\$0,00');
 }
