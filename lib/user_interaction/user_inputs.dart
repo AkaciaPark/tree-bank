@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'dart:math';
+import 'dart:core';
 import 'package:desafio_um/validations/cpf_validation.dart';
 import 'package:desafio_um/validations/email_validation.dart';
 import 'package:desafio_um/validations/full_name_validation.dart';
@@ -10,7 +12,7 @@ import 'package:desafio_um/validations/required_field_validation.dart';
 
 void main() {
   print("Seja bem vindo ao TreeBank!");
-
+/*
   final inputFullName = customPrint(
       message: '\nDigite o seu nome completo:',
       successMessage: '\nNome cadastrado com sucesso!',
@@ -77,8 +79,11 @@ void main() {
       validator: monthlyIncomeValidation);
 
   customerChooseAccount();
+  */
+  testeDeNumeroAleatorio();
 }
 
+/*
 String customPrint({
   required String message,
   required String? Function(String?) validator,
@@ -114,4 +119,20 @@ String? customerChooseAccount() {
   } while (userInput != 'poupanca' && userInput != 'corrente');
   print('Fim');
   
+}
+*/
+void testeDeNumeroAleatorio() {
+  var numerosGerados = 0;
+  Random numeroAleatorio = Random();
+  var listaNumerosAleatorios = [numerosGerados];
+
+  for (int i = 0; i < 7; i++) {
+    numerosGerados = numeroAleatorio.nextInt(10);
+    print(numerosGerados);
+    listaNumerosAleatorios.add(numerosGerados);
+  }
+
+  print(listaNumerosAleatorios);
+  listaNumerosAleatorios.removeAt(0);
+  print(listaNumerosAleatorios);
 }
