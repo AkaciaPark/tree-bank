@@ -12,6 +12,7 @@ List<String> teste1() {
   return listaDeAnimais;
 }
 
-String? teste2(List<String> nomeQualquer) { //colocar parâmetro é a resposta da pergunta que tinha feito p Max
+String? teste2(List<String> nomeQualquer) {
+  //colocar parâmetro é a resposta da pergunta que tinha feito p Max
   print(nomeQualquer[2]);
 }

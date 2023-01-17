@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'dart:core';
@@ -17,6 +18,7 @@ void main() {
       message: '\nDigite o seu nome completo:',
       successMessage: '\nNome cadastrado com sucesso!',
       validator: fullNameValidation);
+      
 
   final inputEmail = customPrint(
       message: '\nDigite o seu email:',
@@ -80,13 +82,13 @@ void main() {
 
   customerChooseAccount();
 
-  String agencyNumber = generateRandomNumber2(7);
+  String agencyNumber = generateRandomNumber(7);
   stdout.write('O número da sua agência é $agencyNumber\n');
 
-  String numberBankCount = generateRandomNumber2(3);
-  stdout.write('O seu código bancário é $numberBankCount\n');
+  String numberBankCode = generateRandomNumber(3);
+  stdout.write('O seu código bancário é $numberBankCode\n');
 
-  String numberBankAccount = generateRandomNumber2(7);
+  String numberBankAccount = generateRandomNumber(7);
   stdout.write('O número da sua conta bancária é $numberBankAccount\n');
 
   stdout.write('Saldo inicial: R\$ 0,00');
@@ -102,8 +104,9 @@ String customPrint({
 
   do {
     print(message);
+   
     value = stdin.readLineSync();
-
+    print(value);
     isValid = validator(value);
     if (isValid == null) {
       print(successMessage);
@@ -126,44 +129,8 @@ void customerChooseAccount() {
     //print(userInput);
   } while (userInput != 'poupanca' && userInput != 'corrente');
 }
-/*
-void generateRandomNumbers() {
-  //NÚMERO DA AGÊNCIA
-  int generatedAgencyNumber;
-  final randomAgencyNumber = Random();
-  var listOfAgencyRandomNumbers = [];
 
-  for (int i = 0; i < 7; i++) {
-    generatedAgencyNumber = randomAgencyNumber.nextInt(10);
-    listOfAgencyRandomNumbers.add(generatedAgencyNumber);
-  }
-
-  String agencyRandomNumber = listOfAgencyRandomNumbers.join('');
-  stdout.write('O número da sua agência é $agencyRandomNumber\n');
-
-  //CÓDIGO BANCÁRIO
-  int generatedBankCode;
-  final randomBankCode = Random();
-  var listOfRandomBankCode = [];
-
-  for (int i = 0; i < 3; i++) {
-    generatedBankCode = randomBankCode.nextInt(10);
-    listOfRandomBankCode.add(generatedBankCode);
-  }
-
-  String bankCode = listOfRandomBankCode.join('');
-  stdout.write('O seu código bancário é: $bankCode\n');
-
-  //CONTA BANCÁRIA
-  final numberBankAccount = generateRandomNumber2(
-      7); //posso colocar final String numberBankAccount também
-  stdout.write('O seu número da conta bancária é $numberBankAccount\n');
-
-  
-}
-*/
-
-String generateRandomNumber2(int interactionsNumber) {
+String generateRandomNumber(int interactionsNumber) {
   int generatedNumber;
   final random = Random();
   var listOfRandomNumbers = [];
