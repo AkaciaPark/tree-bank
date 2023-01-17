@@ -80,7 +80,16 @@ void main() {
 
   customerChooseAccount();
 
-  generateRandomNumbers();
+  String agencyNumber = generateRandomNumber2(7);
+  stdout.write('O número da sua agência é $agencyNumber\n');
+
+  String numberBankCount = generateRandomNumber2(3);
+  stdout.write('O seu código bancário é $numberBankCount\n');
+
+  String numberBankAccount = generateRandomNumber2(7);
+  stdout.write('O número da sua conta bancária é $numberBankAccount\n');
+
+  stdout.write('Saldo inicial: R\$ 0,00');
 }
 
 String customPrint({
@@ -108,7 +117,7 @@ String customPrint({
   return value!;
 }
 
-String? customerChooseAccount() {
+void customerChooseAccount() {
   String? userInput = '';
   do {
     stdout.write(
@@ -117,55 +126,56 @@ String? customerChooseAccount() {
     //print(userInput);
   } while (userInput != 'poupanca' && userInput != 'corrente');
 }
-
+/*
 void generateRandomNumbers() {
-  var generatedAgencyNumber = 0;
-  Random randomAgencyNumber = Random();
-  var listOfAgencyRandomNumbers = [generatedAgencyNumber];
+  //NÚMERO DA AGÊNCIA
+  int generatedAgencyNumber;
+  final randomAgencyNumber = Random();
+  var listOfAgencyRandomNumbers = [];
 
   for (int i = 0; i < 7; i++) {
-    //for para geração de número aleatório da agência
     generatedAgencyNumber = randomAgencyNumber.nextInt(10);
-    //print(generatedAgencyNumber);
     listOfAgencyRandomNumbers.add(generatedAgencyNumber);
   }
 
-  //print(listOfAgencyRandomNumbers);
-  listOfAgencyRandomNumbers.removeAt(0);
   String agencyRandomNumber = listOfAgencyRandomNumbers.join('');
   stdout.write('O número da sua agência é $agencyRandomNumber\n');
 
-  //print('-----------');
-  var generatedBankCode = 0;
-  Random randomBankCode = Random();
-  var listOfRandomBankCode = [generatedBankCode];
+  //CÓDIGO BANCÁRIO
+  int generatedBankCode;
+  final randomBankCode = Random();
+  var listOfRandomBankCode = [];
 
   for (int i = 0; i < 3; i++) {
-    //for para o código bancário
     generatedBankCode = randomBankCode.nextInt(10);
-    //print(generatedBankCode);
     listOfRandomBankCode.add(generatedBankCode);
   }
 
-  //print(listOfRandomBankCode);
-  listOfRandomBankCode.removeAt(0);
   String bankCode = listOfRandomBankCode.join('');
-  stdout.write('O código bancário é: $bankCode\n');
-  //print('teste');
+  stdout.write('O seu código bancário é: $bankCode\n');
 
-  var generatedNumberAccount = 0;
-  Random randomNumberAccount = Random();
-  var listOfRandomNumberAccount = [generatedNumberAccount];
+  //CONTA BANCÁRIA
+  final numberBankAccount = generateRandomNumber2(
+      7); //posso colocar final String numberBankAccount também
+  stdout.write('O seu número da conta bancária é $numberBankAccount\n');
 
-  for (int i = 0; i < 7; i++) {
-    //for para a conta bancária
-    generatedNumberAccount = randomNumberAccount.nextInt(10);
-    listOfRandomNumberAccount.add(generatedNumberAccount);
+  
+}
+*/
+
+String generateRandomNumber2(int interactionsNumber) {
+  int generatedNumber;
+  final random = Random();
+  var listOfRandomNumbers = [];
+
+  for (int i = 0; i < interactionsNumber; i++) {
+    generatedNumber = random.nextInt(10);
+    listOfRandomNumbers.add(generatedNumber);
   }
 
-  listOfRandomNumberAccount.removeAt(0);
-  String numberAccount = listOfRandomNumberAccount.join('');
-  stdout.write('O seu número bancário é $numberAccount\n');
+  String randomNumber = listOfRandomNumbers.join('');
 
-  stdout.write('Saldo inicial: R\$0,00');
+  return randomNumber;
 }
+
+void consequencesOfUserChoiceForAccounts() {}
