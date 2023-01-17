@@ -1,10 +1,9 @@
 main() {
-  teste2(teste1());
+  consequencesOfUserChoiceAccounts2(customerChooseAccount2());
 }
 
-List<String> teste1() {
-  List<String> listaDeAnimais = [];
-
+List<String> customerChooseAccount2() {
+  List<String> listaDeAnimais = []; //vou ter que fazer uma lista das possiveis respostas do usuário e ir add ela?
   listaDeAnimais.add('cachorro');
   listaDeAnimais.add('pato');
   listaDeAnimais.add('grifo');
@@ -12,7 +11,7 @@ List<String> teste1() {
   return listaDeAnimais;
 }
 
-String? teste2(List<String> nomeQualquer) {
+String? consequencesOfUserChoiceAccounts2(List<String> recebeParametro) {
   //colocar parâmetro é a resposta da pergunta que tinha feito p Max
-  print(nomeQualquer[2]);
+  print(recebeParametro[0]);
 }
