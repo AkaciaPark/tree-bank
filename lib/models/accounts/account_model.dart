@@ -5,7 +5,7 @@ class AccountModel{
   final String agency;
   final String bank;
   final String accountNumber;
-  final double balance;
+  final String balance;
 
 
   AccountModel({

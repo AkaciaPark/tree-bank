@@ -1,6 +1,6 @@
 class UserAddressModel{
   final String address;
-  final int cep;
+  final String cep;
   final String neighborhood;
   final String city;
   final String state;

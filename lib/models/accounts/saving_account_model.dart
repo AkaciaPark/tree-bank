@@ -10,7 +10,7 @@ class SavingAccountModel implements AccountModel{
   String agency;
 
   @override
-  double balance;
+  String balance;
 
   @override
   String bank;
