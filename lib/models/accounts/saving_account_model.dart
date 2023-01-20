@@ -1,8 +1,7 @@
 import 'package:desafio_um/models/accounts/account_model.dart';
 import '../users/user_model.dart';
 
-
-class SavingAccountModel implements AccountModel{
+class SavingAccountModel implements AccountModel {
   @override
   String accountNumber;
 
@@ -10,35 +9,30 @@ class SavingAccountModel implements AccountModel{
   String agency;
 
   @override
-  String balance;
+  double balance;
 
   @override
-  String bank;
+  String bankCode;
 
   @override
   UserModel user;
 
-
   SavingAccountModel({
-
     required this.accountNumber,
     required this.agency,
     required this.balance,
-    required this.bank,
+    required this.bankCode,
     required this.user,
-
   });
 
   @override
-  void transfer(){}
-  
-  @override
-  void withdrawMoney(){}
+  void transfer() {}
 
   @override
-  void deposit(){}
+  void withdrawMoney() {}
 
-  void render(){}
-  
+  @override
+  void deposit() {}
 
+  void render() {}
 }

@@ -10,20 +10,20 @@ class CurrentAccountModel implements AccountModel{
   String agency;
 
   @override
-  String balance;
+  double balance;
 
   @override
-  String bank;
+  String bankCode;
 
   @override
   UserModel user;
 
 
-  CurrentAccountModel({
+  CurrentAccountModel({ //o que meu construtor tem
     required this.accountNumber,
     required this.agency,
     required this.balance,
-    required this.bank,
+    required this.bankCode,
     required this.user,
 
   });
@@ -36,8 +36,6 @@ class CurrentAccountModel implements AccountModel{
 
   @override
   void deposit(){}
-
-
 
 
   void loan(){

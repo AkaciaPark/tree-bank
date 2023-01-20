@@ -1,4 +1,4 @@
-import 'package:desafio_um/user_interaction/card.dart';
+import 'package:desafio_um/user_inputs/card.dart';
 import 'package:test/test.dart';
 
 void main() {
