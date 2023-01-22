@@ -12,7 +12,9 @@ import 'helper/custom_print.dart';
 import 'user_address_model_input.dart';
 
 
+
 UserModel userModelCreation() {
+  
   final inputFullName = customPrint(
     message: '\nDigite o seu nome completo:',
     successMessage: '\nNome cadastrado com sucesso!',
@@ -59,6 +61,9 @@ UserModel userModelCreation() {
     phoneNumber: inputPhoneNumber,
     userAddress: userAddressModel,
   );
+  //userModelCreation().name
+  //user.name
+ // são a mesma coisa
 
   return user;
 }

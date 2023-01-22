@@ -1,35 +1,30 @@
-//passo 2.1
-
 import 'dart:io';
-
 import 'package:desafio_um/user_inputs/helper/generate_random_number.dart';
-
-import '../models/accounts/saving_account_model.dart';
 import '../models/cards/card_model.dart';
-//caso tenha escolhido conta poupança fazer um cartão de débito
-//descobrir o que o usuário digitou
+import '../models/users/user_model.dart';
 
-/*CardModel cardModel(CardModel creatCard){
+// passo 2.1
+// função que cria cartão de débito
+CardModel createCardModel(UserModel userModel) {
   //ideia: poderia fazer um bool pra saber a resposta
-  
+
   String cardNumber = generateRandomNumber(16);
   stdout.writeln('O número do seu cartão é $cardNumber');
 
   String cvvNumber = generateRandomNumber(3);
   stdout.writeln('O número do seu cvv é $cvvNumber()');
 
-  
-  if (accountModel is SavingAccountModel) { //se for conta poupanca
-    CardModel cardModel = CardModel(
-      numberAccount: cardNumber,
-      cardFlag: 'leaf',
-      cvv: cvvNumber,
-      nameAccount: nameAccount,
-      validThru: 10,
-    );
-  }
-//TODO: posso usar o generate_random_number
-//TODO: depois jogar o meu if dentro de uma função e deixar bonitinha
-}
-*/
+  CardModel cardModel = CardModel(
+    numberAccount: int.parse(
+        cardNumber), //transformando em int pq precisa espera receber int
+    cardFlag: 'leaf',
+    cvv: int.parse(cvvNumber),
+    nameAccount: userModel.name, //nome do dono
+    validThru: 10,
+  );
 
+  String owenerName = userModel.name;
+  stdout.writeln('O nome apresentado foi $owenerName');
+
+  return cardModel;
+}

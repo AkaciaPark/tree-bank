@@ -10,8 +10,12 @@ enum AccountType {
   saving
 } // enum = enumerador --> dar uma pesquisada mais sobre depois
 
+//criar uma variável global pra poder ser atribuida e colocar no get
+
+AccountType? _variavelGlobalCurrentAccountType;
+
 AccountModel accountModelInput(UserModel userModel) {
-  AccountType accountType = _customerChooseAccount();
+ _variavelGlobalCurrentAccountType = _customerChooseAccount();
 
   String agencyNumber = generateRandomNumber(7);
   stdout.write('O número da sua agência é $agencyNumber\n');
@@ -46,8 +50,10 @@ AccountModel accountModelInput(UserModel userModel) {
     return savingAccountModel;
   }
 }
+// persistir = guardar
 
 AccountType _customerChooseAccount() {
+
   String userInput;
 
   do {
@@ -75,7 +81,15 @@ AccountType _parseAccountType(String userAccount) {
   return accountType;
 }
 
-/*void creatingAnAccountDependingOnInput() { //vai dar problema mais pra frente
+AccountType? get accountType{ //retorno algo que é privado mas de forma pública
+  return _variavelGlobalCurrentAccountType;
+}
+
+
+
+
+/*
+void creatingAnAccountDependingOnInput() { //vai dar problema mais pra frente
   String consequenceOfChosenAccount = customerChooseAccount();
   if (consequenceOfChosenAccount == 'poupanca') {
     stdout.writeln(
