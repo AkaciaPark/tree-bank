@@ -20,4 +20,6 @@ class UserModel{
     required this.monthlyIncome,
   });
 
+
+
 }

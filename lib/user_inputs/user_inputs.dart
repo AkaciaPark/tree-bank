@@ -7,6 +7,6 @@ void main() {
   print("Seja bem vindo ao TreeBank!");
   UserModel userModel = userModelCreation();
   accountModelInput(userModel);
-  userBifurcation(accountType!, userModel); //exclamação pq o usuario já informou o tipo de conta!
-
+  userBifurcation(accountType!,
+      userModel); //exclamação pq o usuario já informou o tipo de conta!
 }

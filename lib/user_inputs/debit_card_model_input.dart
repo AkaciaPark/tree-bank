@@ -6,13 +6,15 @@ import '../models/users/user_model.dart';
 // passo 2.1
 // função que cria cartão de débito
 CardModel createCardModel(UserModel userModel) {
-  //ideia: poderia fazer um bool pra saber a resposta
+  stdout.writeln('---- Criado o cartão de DÉBITO! ----');
+
+  stdout.writeln('O nome da bandeira do cartão é "leaf"');
 
   String cardNumber = generateRandomNumber(16);
   stdout.writeln('O número do seu cartão é $cardNumber');
 
   String cvvNumber = generateRandomNumber(3);
-  stdout.writeln('O número do seu cvv é $cvvNumber()');
+  stdout.writeln('O número do seu cvv é $cvvNumber');
 
   CardModel cardModel = CardModel(
     numberAccount: int.parse(

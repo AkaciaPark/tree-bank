@@ -6,6 +6,3 @@ String? requiredFields(String? address) {
   }
   return null;
 }
-
-
-
