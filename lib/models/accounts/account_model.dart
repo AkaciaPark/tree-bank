@@ -17,8 +17,6 @@ class AccountModel{
 
   });
 
-  void transfer(){}
-
   void withdrawMoney(){}
 
   void deposit(){}

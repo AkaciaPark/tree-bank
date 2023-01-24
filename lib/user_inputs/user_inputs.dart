@@ -1,10 +1,11 @@
+import 'dart:io';
 import '../models/users/user_model.dart';
 import 'account_model_input.dart';
 import 'user_bifurcation.dart';
 import 'user_model_input.dart';
 
 void main() {
-  print("Seja bem vindo ao TreeBank!");
+  stdout.writeln("Seja bem vindo ao TreeBank!");
   UserModel userModel = userModelCreation();
   accountModelInput(userModel);
   userBifurcation(accountType!,

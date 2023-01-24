@@ -9,43 +9,43 @@ import 'helper/custom_print.dart';
 UserAddressModel userAddressModelCreation() {
   final inputCep = customPrint(
     message: '\nDigite o seu CEP:',
-    successMessage: '\nCEP cadastrado com sucesso!',
+    successMessage: 'CEP cadastrado com sucesso!\n',
     validator: requiredFields,
   );
 
   final inputAddress = customPrint(
     message: '\nDigite o seu endereço:',
-    successMessage: '\nEndereço cadastrado com sucesso!',
+    successMessage: 'Endereço cadastrado com sucesso!\n',
     validator: requiredFields,
   );
 
   final inputNeighborhood = customPrint(
     message: '\nDigite o seu bairro:',
-    successMessage: '\nBairro cadastrado com sucesso!',
+    successMessage: 'Bairro cadastrado com sucesso!\n',
     validator: requiredFields,
   );
 
   final inputCity = customPrint(
     message: '\nDigite a sua cidade:',
-    successMessage: '\nCidade cadastrada com sucesso!',
+    successMessage: 'Cidade cadastrada com sucesso!\n',
     validator: requiredFields,
   );
 
   final inputState = customPrint(
     message: '\nDigite o seu Estado:',
-    successMessage: '\nEstado cadastrado com sucesso!',
+    successMessage: 'Estado cadastrado com sucesso!\n',
     validator: requiredFields,
   );
 
   final inputNumberAddress = customPrint(
     message: '\nDigite o número do seu endereço:',
-    successMessage: '\nNúmero de endereço cadastrado com sucesso!',
+    successMessage: 'Número de endereço cadastrado com sucesso!\n',
     validator: requiredFields,
   );
 
   final inputComplementAddress = customPrint(
     message: '\n(Opcional) Digite o complemento do seu endereço:',
-    successMessage: '\nComplemento cadastrado com sucesso!',
+    successMessage: 'Complemento cadastrado com sucesso!\n',
     validator: optionalField,
   );
 

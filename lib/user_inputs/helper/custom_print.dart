@@ -9,15 +9,13 @@ String customPrint({
   String? isValid;
 
   do {
-    print(message);
-
+    stdout.writeln(message);
     value = stdin.readLineSync();
-    //print(value);
     isValid = validator(value);
     if (isValid == null) {
-      print(successMessage);
+      stdout.write(successMessage);
     } else {
-      print(isValid);
+      stdout.writeln(isValid);
     }
   } while (isValid != null);
 

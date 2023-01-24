@@ -29,14 +29,10 @@ class CurrentAccountModel implements AccountModel{
   });
 
   @override
-  void transfer(){}
-
-  @override
   void withdrawMoney(){}
 
   @override
   void deposit(){}
-
 
   void loan(){
   }

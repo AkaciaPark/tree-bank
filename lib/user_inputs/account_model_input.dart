@@ -5,28 +5,29 @@ import 'package:desafio_um/models/users/user_model.dart';
 import '../models/accounts/account_model.dart';
 import 'helper/generate_random_number.dart';
 
-enum AccountType {
-  current,
-  saving
-} // enum = enumerador --> dar uma pesquisada mais sobre depois
+enum AccountType { current, saving }
+/* enum = enumerador --> é uma maneira de enumerar um conjunto predefinido de valores ou instâncias de forma
+a garantir que não haverá nenhuma outra instância desse tipo*/
 
-//criar uma variável global pra poder ser atribuida e colocar no get
 
-AccountType? _variavelGlobalCurrentAccountType;
+// criar uma variável global para ser atribuida e colocar no get
+AccountType? _globalVariableCurrentAccountType;
 
 AccountModel accountModelInput(UserModel userModel) {
- _variavelGlobalCurrentAccountType = _customerChooseAccount();
+  _globalVariableCurrentAccountType = _customerChooseAccount();
+
+  stdout.write('\nOs dados da sua conta são: ');
 
   String agencyNumber = generateRandomNumber(7);
-  stdout.write('O número da sua agência é $agencyNumber\n');
+  stdout.writeln('\nO número da agência é $agencyNumber.');
 
   String numberBankCode = generateRandomNumber(3);
-  stdout.write('O seu código bancário é $numberBankCode\n');
+  stdout.writeln('O código bancário é $numberBankCode.');
 
   String numberBankAccount = generateRandomNumber(7);
-  stdout.write('O número da sua conta bancária é $numberBankAccount\n');
+  stdout.writeln('O número da conta bancária é $numberBankAccount.');
 
-  stdout.write('Saldo inicial: R\$ 0,00\n');
+  stdout.writeln('Saldo inicial: R\$ 0,00');
 
 // devo criar um objeto currentAccountModel se o usuário selecionou corrente
   if (accountType == AccountType.current) {
@@ -50,14 +51,12 @@ AccountModel accountModelInput(UserModel userModel) {
     return savingAccountModel;
   }
 }
-// persistir = guardar
 
 AccountType _customerChooseAccount() {
-
   String userInput;
 
   do {
-    stdout.writeln('Hora de escolher o tipo de conta!');
+    stdout.writeln('\n~~ Hora de escolher o tipo de conta! ~~');
     stdout.writeln(
       'Digite poupanca para Conta Poupança ou corrente para Conta Corrente',
     );
@@ -81,25 +80,7 @@ AccountType _parseAccountType(String userAccount) {
   return accountType;
 }
 
-AccountType? get accountType{ //retorno algo que é privado mas de forma pública
-  return _variavelGlobalCurrentAccountType;
+AccountType? get accountType {
+  //retorno algo que é privado mas de forma pública
+  return _globalVariableCurrentAccountType;
 }
-
-
-
-
-/*
-void creatingAnAccountDependingOnInput() { //vai dar problema mais pra frente
-  String consequenceOfChosenAccount = customerChooseAccount();
-  if (consequenceOfChosenAccount == 'poupanca') {
-    stdout.writeln(
-      'Conta Poupança escolhido. Você tem acesso apenas ao cartão de débito.',
-    );
-  }
-  if (consequenceOfChosenAccount == 'corrente') {
-    stdout.writeln(
-      'Conta Corrente escolhido. Você tem acesso ao cartão de débito OU cartão de débito e crédito.',
-    );
-  }
-}
-*/

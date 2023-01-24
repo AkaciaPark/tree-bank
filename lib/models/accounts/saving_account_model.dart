@@ -26,9 +26,6 @@ class SavingAccountModel implements AccountModel {
   });
 
   @override
-  void transfer() {}
-
-  @override
   void withdrawMoney() {}
 
   @override
