@@ -8,15 +8,15 @@ String defineCredit(String incomeValue) { //definir um crédito apenas se a rend
   
   if (monthlyIncomeValue <= 1000) {
     limit = monthlyIncomeValue * (0.1);
-    print('--> O valor do seu limite de cartão de crédito é de $limit reais.');
+    stdout.writeln('--> O valor do seu limite de cartão de crédito é de $limit reais.');
   }
   else if(monthlyIncomeValue <= 2500){
     limit = monthlyIncomeValue * (0.25);
-     print('--> O valor do seu limite de cartão de crédito é de $limit reais.');
+     stdout.writeln('--> O valor do seu limite de cartão de crédito é de $limit reais.');
   }
   else if(monthlyIncomeValue <= 5000){
     limit = monthlyIncomeValue * (0.4);
-    print('--> O valor do seu limite de cartão de crédito é de $limit reais.');
+    stdout.writeln('--> O valor do seu limite de cartão de crédito é de $limit reais.');
   }
   else if(monthlyIncomeValue <= 10000){
     limit = monthlyIncomeValue * (0.6);

@@ -19,7 +19,7 @@ class CurrentAccountModel implements AccountModel{
   UserModel user;
 
 
-  CurrentAccountModel({ //o que meu construtor tem
+  CurrentAccountModel({ //o que meu construtor da classe CurrentAccountModel tem
     required this.accountNumber,
     required this.agency,
     required this.balance,

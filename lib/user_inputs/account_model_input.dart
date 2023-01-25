@@ -31,24 +31,24 @@ AccountModel accountModelInput(UserModel userModel) {
 
 // devo criar um objeto currentAccountModel se o usuário selecionou corrente
   if (accountType == AccountType.current) {
-    CurrentAccountModel accountCurrent = CurrentAccountModel(
-      accountNumber: numberBankAccount,
+    CurrentAccountModel currentAccount = CurrentAccountModel(
+      accountNumber: numberBankAccount, // : (dois pontos) estou passando um valor; ler 'recebe'
       agency: agencyNumber,
       balance: 0,
       bankCode: numberBankCode,
       user: userModel,
     );
-    return accountCurrent;
+    return currentAccount;
   } else {
     // devo criar um objeto savingAccountModel se o usuário selecionou poupanca
-    SavingAccountModel savingAccountModel = SavingAccountModel(
+    SavingAccountModel savingAccount = SavingAccountModel(
       accountNumber: numberBankAccount,
       agency: agencyNumber,
       balance: 0,
       bankCode: numberBankCode,
       user: userModel,
     );
-    return savingAccountModel;
+    return savingAccount;
   }
 }
 
