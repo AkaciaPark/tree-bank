@@ -3,7 +3,7 @@ import 'package:desafio_um/user_inputs/helper/generate_random_number.dart';
 import '../models/cards/card_model.dart';
 import '../models/users/user_model.dart';
 
-// passo 2.1
+
 // função que cria cartão de débito
 CardModel createCardModel(UserModel userModel) {
   stdout.writeln('---- Criado o cartão de DÉBITO! ----');
@@ -17,10 +17,9 @@ CardModel createCardModel(UserModel userModel) {
   stdout.writeln('O número do seu cvv é $cvvNumber');
 
   CardModel cardModel = CardModel(
-    numberAccount: int.parse(
-        cardNumber), //transformando em int pq precisa espera receber int
+    numberAccount: cardNumber,
     cardFlag: 'leaf',
-    cvv: int.parse(cvvNumber),
+    cvv: cvvNumber,
     nameAccount: userModel.name, //nome do dono
     validThru: 10,
   );

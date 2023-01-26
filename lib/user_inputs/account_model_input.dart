@@ -10,11 +10,10 @@ enum AccountType { current, saving }
 a garantir que não haverá nenhuma outra instância desse tipo*/
 
 
-// criar uma variável global para ser atribuida e colocar no get
-AccountType? _globalVariableCurrentAccountType;
+
 
 AccountModel accountModelInput(UserModel userModel) {
-  _globalVariableCurrentAccountType = _customerChooseAccount();
+  AccountType accountType = _customerChooseAccount();
 
   stdout.write('\nOs dados da sua conta são: ');
 
@@ -80,7 +79,3 @@ AccountType _parseAccountType(String userAccount) {
   return accountType;
 }
 
-AccountType? get accountType {
-  //retorno algo que é privado mas de forma pública
-  return _globalVariableCurrentAccountType;
-}

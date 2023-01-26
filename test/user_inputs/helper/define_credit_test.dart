@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
 
-  //caminho feliz :)
+  //caminho feliz :) -> só vai ter caminho feliz!
 test('if the income value is less than 1.000 reais should return a limit of 10% on the related income value' , () {
   final monthlyIncomeExpected = defineCredit('500.00');
   expect(monthlyIncomeExpected, '50.00');

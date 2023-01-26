@@ -5,13 +5,13 @@ class CreditCardModel implements CardModel{
   String cardFlag;
 
   @override
-  int cvv;
+  String cvv;
 
   @override
   String nameAccount;
 
   @override
-  int numberAccount;
+  String numberAccount;
 
   @override
   int validThru;
@@ -29,7 +29,5 @@ class CreditCardModel implements CardModel{
     required this.amountSpent,
 
   });
-
- 
 
 }

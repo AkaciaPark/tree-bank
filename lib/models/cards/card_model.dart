@@ -1,7 +1,7 @@
 class CardModel{
-  final int numberAccount;
+  final String numberAccount;
   final String cardFlag;
-  final int cvv;
+  final String cvv;
   final String nameAccount;
   final int validThru;
 
