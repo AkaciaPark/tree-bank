@@ -10,8 +10,6 @@ enum AccountType { current, saving }
 a garantir que não haverá nenhuma outra instância desse tipo*/
 
 
-
-
 AccountModel accountModelInput(UserModel userModel) {
   AccountType accountType = _customerChooseAccount();
 

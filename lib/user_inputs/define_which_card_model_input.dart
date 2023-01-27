@@ -4,11 +4,11 @@ import '../models/users/user_model.dart';
 import 'account_model_input.dart';
 import 'credit_card_model_input.dart';
 import 'debit_card_model_input.dart';
-import 'helper/define_credit.dart';
+import 'helper/define_limit_credit_card.dart';
 
 // fazer aqui a bifurcação do cartão - se for conta poupanca ou corrente - levar para os respectivos cartões
 
-CardModel defineLimitCreditCard(AccountType accountType, UserModel userModel) {
+CardModel defineWhichCard(AccountType accountType, UserModel userModel) {
   bool hasMonthlyIncome = userModel.monthlyIncome != null &&
       userModel.monthlyIncome!.trim().isNotEmpty;
 
@@ -18,7 +18,7 @@ CardModel defineLimitCreditCard(AccountType accountType, UserModel userModel) {
     //cartão de crédito = se digitou corrente com renda mensal
     //agora sim estou criando um cartão de crédito!
   } else if (AccountType.current == accountType && hasMonthlyIncome) {
-    double limiteDoCartao = defineCredit(userModel.monthlyIncome!);
+    double limiteDoCartao = defineLimitCreditCard(userModel.monthlyIncome!);
     createCreditCard(userModel, limiteDoCartao);
 
     //cartão de débito = se digitou corrente sem renda mensal

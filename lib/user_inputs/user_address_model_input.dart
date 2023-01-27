@@ -1,11 +1,10 @@
-// criar uma função que retorne um model a partir do input do usuário
 // model = modelagem de um objeto do mundo real
 import '../models/users/user_address_model.dart';
 import '../validations/optional_field_validation.dart';
 import '../validations/required_field_validation.dart';
 import 'helper/custom_print.dart';
 
-
+// criar uma função que retorne um model a partir do input do usuário
 UserAddressModel userAddressModelCreation() {
   final inputCep = customPrint(
     message: '\nDigite o seu CEP:',

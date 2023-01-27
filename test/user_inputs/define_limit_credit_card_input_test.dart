@@ -2,7 +2,7 @@ import 'package:desafio_um/models/cards/card_model.dart';
 import 'package:desafio_um/models/users/user_address_model.dart';
 import 'package:desafio_um/models/users/user_model.dart';
 import 'package:desafio_um/user_inputs/account_model_input.dart';
-import 'package:desafio_um/user_inputs/define_limit_credit_card_model_input.dart';
+import 'package:desafio_um/user_inputs/define_which_card_model_input.dart';
 import 'package:test/test.dart';
 
 void main() {/*
