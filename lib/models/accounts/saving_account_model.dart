@@ -29,7 +29,7 @@ class SavingAccountModel implements AccountModel {
   void withdrawMoney() {}
 
   @override
-  void deposit() {}
+  void deposit(double valueToDeposit) {}
 
   void render() {}
 }

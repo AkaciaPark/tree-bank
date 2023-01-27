@@ -1,7 +1,6 @@
-//função que recebe um valor e só vai calcular o limite do cartão de crédito
 import 'dart:io';
 
-double defineLimitCreditCard(String incomeValue) {
+double defineLimitCreditCard({required String incomeValue}) {
   stdout.writeln('Valor gasto inicial R\$0,0\n');
   double limit = 0;
   double monthlyIncomeValue = double.parse(incomeValue);

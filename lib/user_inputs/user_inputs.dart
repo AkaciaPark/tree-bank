@@ -10,24 +10,15 @@ import 'user_model_input.dart';
 
 void main() {
   stdout.writeln("Seja bem vindo ao TreeBank!");
+
   UserModel userModel = userModelCreation();
   AccountModel account = accountModelInput(userModel);
   if (account is CurrentAccountModel) {
-    defineWhichCard(AccountType.current, userModel);
+    defineWhichCard(accountType:AccountType.current, userModel:userModel);
   } else if (account is SavingAccountModel) {
-    defineWhichCard(AccountType.saving, userModel);
+    defineWhichCard(accountType:AccountType.saving, userModel:userModel);
   }
-
   menuInteractive();
-/* é a mesma coisa que o if em cima, mas feito de forma diferente
-  late AccountType variavel;
 
-  if (exemmplo is CurrentAccountModel) {
-    variavel = AccountType.current;
-  } else if (exemmplo is SavingAccountModel) {
-    variavel = AccountType.saving;
-  }
-  userBifurcation(variavel, userModel);
-*/
-  //eu preciso dos objetos dos meus cartões
+  // eu preciso dos objetos dos meus cartões
 }

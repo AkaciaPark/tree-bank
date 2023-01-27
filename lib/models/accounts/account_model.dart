@@ -1,12 +1,11 @@
 import '../users/user_model.dart';
 
-class AccountModel{
+class AccountModel {
   final UserModel user;
   final String agency;
   final String bankCode;
   final String accountNumber;
-  final double balance;
-
+  double balance;
 
   AccountModel({
     required this.user,
@@ -14,11 +13,11 @@ class AccountModel{
     required this.bankCode,
     required this.accountNumber,
     required this.balance,
-
   });
 
-  void withdrawMoney(){}
+  void withdrawMoney() {}
 
-  void deposit(){}
-
+  void deposit(double valueToDeposit) {
+    balance += valueToDeposit;
+  }
 }

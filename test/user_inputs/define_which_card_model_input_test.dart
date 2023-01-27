@@ -5,7 +5,7 @@ import 'package:desafio_um/user_inputs/account_model_input.dart';
 import 'package:desafio_um/user_inputs/define_which_card_model_input.dart';
 import 'package:test/test.dart';
 
-void main() {/*
+void main() {
   UserAddressModel userAddressModel = UserAddressModel(
     address: '',
     cep: '',
@@ -28,7 +28,7 @@ void main() {/*
       () {
     UserModel userModel = UserModel(
       userAddress: userAddressModel,
-      name: 'Bala',
+      name: '',
       email: '',
       phoneNumber: '',
       cpf: '',
@@ -36,8 +36,8 @@ void main() {/*
       monthlyIncome: '',
     );
 
-    final exemplo = defineLimitCreditCard(AccountType.saving, userModel);
-    expect(exemplo, cardModel);
+    final exemplo = defineWhichCard(accountType:AccountType.saving, userModel:userModel);
+    expect(exemplo, isA<CardModel>());
   });
-  */
+  
 }
