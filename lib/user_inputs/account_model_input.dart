@@ -5,24 +5,25 @@ import 'package:desafio_um/models/users/user_model.dart';
 import '../models/accounts/account_model.dart';
 import 'helper/generate_random_number.dart';
 
-enum AccountType { current, saving }
+enum AccountType {current, saving}
 /* enum = enumerador --> é uma maneira de enumerar um conjunto predefinido de valores ou instâncias de forma
 a garantir que não haverá nenhuma outra instância desse tipo*/
 
 
-AccountModel accountModelInput(UserModel userModel) {
+AccountModel accountModelInput({required UserModel userModel}) {
   AccountType accountType = _customerChooseAccount();
 
   stdout.write('\nOs dados da sua conta são: ');
 
-  String agencyNumber = generateRandomNumber(7);
+  String agencyNumber = generateRandomNumber(interactionsNumber: 7);
   stdout.writeln('\nO número da agência é $agencyNumber.');
 
-  String numberBankCode = generateRandomNumber(3);
+  String numberBankCode = generateRandomNumber(interactionsNumber: 3);
   stdout.writeln('O código bancário é $numberBankCode.');
 
-  String numberBankAccount = generateRandomNumber(7);
+  String numberBankAccount = generateRandomNumber(interactionsNumber: 7);
   stdout.writeln('O número da conta bancária é $numberBankAccount.');
+
 
   stdout.writeln('Saldo inicial: R\$ 0,00');
 
@@ -60,13 +61,13 @@ AccountType _customerChooseAccount() {
     userInput = stdin.readLineSync()!;
   } while (userInput != 'poupanca' && userInput != 'corrente');
 
-  AccountType accountType = _parseAccountType(userInput);
+  AccountType accountType = _parseAccountType(userAccount:userInput);
   return accountType;
 }
 
 // criar uma função que retorne AccountType e receba uma String
 // ela deve converter a String numa AccountType
-AccountType _parseAccountType(String userAccount) {
+AccountType _parseAccountType({required String userAccount}) {
   AccountType accountType;
 
   if (userAccount == 'poupanca') {

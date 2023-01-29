@@ -18,7 +18,7 @@ CardModel defineWhichCard({required AccountType accountType, required UserModel 
   // cartão de débito = se digitou poupanca
   if (AccountType.saving == accountType) {
     //coloco na variável returnCardModel o retorno da minha função, que é do tipo CardModel
-    returnCardModel = createCardModel(userModel);
+    returnCardModel = createCardModel(userModel:userModel);
     //cartão de crédito = se digitou corrente com renda mensal
     //agora sim estou criando um cartão de crédito!
   } else if (AccountType.current == accountType && hasMonthlyIncome) {
@@ -27,7 +27,7 @@ CardModel defineWhichCard({required AccountType accountType, required UserModel 
 
     //cartão de débito = se digitou corrente sem renda mensal
   } else if (AccountType.current == accountType && !hasMonthlyIncome) {
-    returnCardModel = createCardModel(userModel);
+    returnCardModel = createCardModel(userModel:userModel);
   }
 
   return returnCardModel;

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-String generateRandomNumber(int interactionsNumber) {
+String generateRandomNumber({required int interactionsNumber}) {
   int generatedNumber;
   final random = Random();
   var listOfRandomNumbers = [];

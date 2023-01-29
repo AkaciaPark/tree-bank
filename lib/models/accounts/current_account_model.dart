@@ -32,7 +32,9 @@ class CurrentAccountModel implements AccountModel{
   void withdrawMoney(){}
 
   @override
-  void deposit(double valueToDeposit){}
+  void deposit(double valueToDeposit){
+    balance += valueToDeposit;
+  }
 
   void loan(){
   }

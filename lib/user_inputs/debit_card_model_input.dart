@@ -5,15 +5,15 @@ import '../models/users/user_model.dart';
 
 
 // função que cria cartão de débito
-CardModel createCardModel(UserModel userModel) {
+CardModel createCardModel({required UserModel userModel}) {
   stdout.writeln('---- Criado o cartão de DÉBITO! ----');
 
   stdout.writeln('O nome da bandeira do cartão é "leaf"');
 
-  String cardNumber = generateRandomNumber(16);
+  String cardNumber = generateRandomNumber(interactionsNumber: 16);
   stdout.writeln('O número do seu cartão é $cardNumber');
 
-  String cvvNumber = generateRandomNumber(3);
+  String cvvNumber = generateRandomNumber(interactionsNumber: 3);
   stdout.writeln('O número do seu cvv é $cvvNumber');
 
   CardModel cardModel = CardModel(
