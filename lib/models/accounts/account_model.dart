@@ -17,7 +17,8 @@ class AccountModel {
 
   void withdrawMoney() {}
 
-  void deposit(double valueToDeposit) {
+  double deposit(double valueToDeposit) {
     balance += valueToDeposit;
+    return balance;
   }
 }

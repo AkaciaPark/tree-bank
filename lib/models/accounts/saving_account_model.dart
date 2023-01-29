@@ -29,8 +29,9 @@ class SavingAccountModel implements AccountModel {
   void withdrawMoney() {}
 
   @override
-  void deposit(double valueToDeposit) {
+  double deposit(double valueToDeposit) {
     balance += valueToDeposit;
+    return balance;
   }
 
   void render() {}

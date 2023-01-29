@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_money_interactive_menu.dart';
+import '../helper/show_financial_proof.dart';
 import 'interactive_menu_option.dart';
 import 'receive_deposit_interactive_menu_input.dart';
 
@@ -37,7 +38,10 @@ void interactiveMenu({required AccountModel accountModel}) {
       stdout.writeln(interactiveMenuOptions[1].optionText);
     } else if (recebeInputUsuario == interactiveMenuOptions[2].optionCode) {
       stdout.writeln(interactiveMenuOptions[2].optionText);
-       receiveDeposit(accountModel:accountModel, valueToDeposit: 50);
+      final valueDeposit = receiveDeposit(accountModel: accountModel);
+      showFinancialProof(
+          transactionType: TransactionType.deposito,
+          transactionValue: valueDeposit);
     } else if (recebeInputUsuario == interactiveMenuOptions[3].optionCode) {
       stdout.writeln(interactiveMenuOptions[3].optionText);
     } else if (recebeInputUsuario == interactiveMenuOptions[4].optionCode) {
