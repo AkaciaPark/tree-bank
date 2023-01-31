@@ -45,7 +45,7 @@ void interactiveMenu(
       passwordRequired(userModel: userModel);
       showFinancialProof(
           transactionType: TransactionType.deposito,
-          transactionValue: valueDeposit);
+          transactionValue: double.parse(valueDeposit));
     } else if (recebeInputUsuario == interactiveMenuOptions[3].optionCode) {
       stdout.writeln(interactiveMenuOptions[3].optionText);
     } else if (recebeInputUsuario == interactiveMenuOptions[4].optionCode) {

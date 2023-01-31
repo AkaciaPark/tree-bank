@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:desafio_um/models/accounts/current_account_model.dart';
 import 'package:desafio_um/models/accounts/saving_account_model.dart';
 import 'package:desafio_um/models/cards/card_model.dart';
-import 'package:desafio_um/user_inputs/helper/password_required.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/interactive_menu_input.dart';
 import '../models/accounts/account_model.dart';
 import '../models/users/user_model.dart';

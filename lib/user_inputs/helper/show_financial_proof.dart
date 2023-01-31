@@ -7,12 +7,12 @@ import 'dart:io';
 // posso usar enum
 // o tipo de transação!! não o tipo de conta
 
-// falta pedir a senha e falar que não pode depósito maior que 5 mil reais
 enum TransactionType { deposito, saque }
-
-
+// mostrar a mensagem de erro também
 void showFinancialProof(
-    {required TransactionType transactionType, required double transactionValue}) {
+    {required TransactionType transactionType,
+    required double transactionValue}) {
+
   stdout.writeln(
       'Foi feito o ${transactionType.name} no valor de R\$$transactionValue.');
 }
