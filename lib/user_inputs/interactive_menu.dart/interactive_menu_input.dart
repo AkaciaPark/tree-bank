@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
+import 'package:desafio_um/user_inputs/helper/access_only_to_saving_account.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_money_interactive_menu.dart';
 import '../../models/users/user_model.dart';
 import '../helper/password_required.dart';
@@ -18,14 +19,14 @@ void interactiveMenu(
     InterativeMenuOption(optionCode: '4', optionText: 'Rendimento.'),
     InterativeMenuOption(optionCode: '5', optionText: 'Pagar com débito.'),
     InterativeMenuOption(optionCode: '6', optionText: 'Pagar com crédito.'),
-    InterativeMenuOption(
-        optionCode: '-', optionText: 'Você não escolheu nenhuma das opções.'),
+    InterativeMenuOption(optionCode: 'Sair', optionText: 'Sair do Menu Interativo'),
   ];
 
   do {
     stdout.writeln('\nVocê está no Menu Interativo!');
     stdout.writeln(
         'Escolha algum dos números abaixo para prosseguir no TreeBank');
+
     for (var i = 0; i < interactiveMenuOptions.length - 1; i++) {
       stdout.writeln(
           '${interactiveMenuOptions[i].optionCode} - ${interactiveMenuOptions[i].optionText} ');
@@ -48,6 +49,7 @@ void interactiveMenu(
           transactionValue: double.parse(valueDeposit));
     } else if (recebeInputUsuario == interactiveMenuOptions[3].optionCode) {
       stdout.writeln(interactiveMenuOptions[3].optionText);
+      accessOnlyToSavingAccount(accountModel: accountModel, userModel: userModel);
     } else if (recebeInputUsuario == interactiveMenuOptions[4].optionCode) {
       stdout.writeln(interactiveMenuOptions[4].optionText);
     } else if (recebeInputUsuario == interactiveMenuOptions[5].optionCode) {

@@ -13,7 +13,7 @@ void passwordRequired({required UserModel userModel}) {
     stdout.writeln('Para prosseguir, insira a sua senha numérica.');
     passwordRequired = stdin.readLineSync();
     if (passwordRequired == userModel.numericPassword.toString()) {
-      stdout.writeln('Sucesso!\n');
+      stdout.writeln('Acesso liberado~\n');
     } else {
       stdout.writeln('\nSenha incorreta!\n');
 

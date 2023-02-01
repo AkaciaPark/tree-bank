@@ -8,21 +8,19 @@ String receiveDeposit({required dynamic accountModel}) {
   // tenho que definir se é corrente ou poupanca
   late final String result;
   stdout.write('Informe o valor que deseja depositar: ');
-  String? receiveValueInput;
-  receiveValueInput = stdin.readLineSync();
-  // transformo o valor que o usuário inputou de String para double
-  // se o input for nulo ele vai virar 0.0
+  String? receiveValueInput = stdin.readLineSync();
+
   if (receiveValueInput == null || receiveValueInput.trim().isEmpty) {
     receiveValueInput = '0.0';
   }
   double valueInputToDouble = double.parse(receiveValueInput);
-
+  //vai chegar se o valor inputado é menor que zero e maior que 5mil
   valueInputToDouble =
       checkTheDepositAmount(valueInputToDouble: valueInputToDouble);
 
   if (accountModel.runtimeType.toString() == 'SavingAccountModel') {
     // depositar na conta poupanca
-    // informando pra variavel que o tipo dela é SavingAccountModel (isso é casting em programação)
+    // informando pra variavel que o tipo dela é SavingAccountModel (isso se chama casting)
     SavingAccountModel savingAccount = accountModel as SavingAccountModel;
     savingAccount.deposit(valueInputToDouble);
     result = valueInputToDouble.toString();
