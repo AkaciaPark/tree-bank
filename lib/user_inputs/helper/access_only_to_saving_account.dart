@@ -9,15 +9,20 @@ import 'access_denied_for_account_type.dart';
 // checar com is é mais indicado do que com o if/else
 // nome da variavel is tipo
 
-void accessOnlyToSavingAccount(
-    {required AccountModel accountModel, required UserModel userModel}) {
+void accessOnlyToSavingAccount({
+  required AccountModel accountModel,
+  required UserModel userModel,
+}) {
   if (accountModel is SavingAccountModel) {
     render(
-        accountModel: accountModel,
-        userModel: userModel,
-        incomeValue: userModel.monthlyIncome!);
+      accountModel: accountModel,
+      userModel: userModel,
+      incomeValue: userModel.monthlyIncome!,
+    );
   } else {
     accessDeniedForAccountType(
-        accountModel: accountModel, userModel: userModel);
+      accountModel: accountModel,
+      userModel: userModel,
+    );
   }
 }
