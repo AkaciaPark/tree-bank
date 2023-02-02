@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
-import 'package:desafio_um/user_inputs/helper/check_the_deposit_amount.dart';
+import 'package:desafio_um/user_inputs/interactive_menu.dart/check_the_deposit_amount_interactive_menu.dart';
 
 String receiveDeposit({required AccountModel accountModel}) {
   // quem que vai receber, ele está no parâmetro
