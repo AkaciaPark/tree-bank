@@ -1,9 +1,8 @@
 import 'dart:io';
-import 'package:desafio_um/models/accounts/current_account_model.dart';
-import 'package:desafio_um/models/accounts/saving_account_model.dart';
+import 'package:desafio_um/models/accounts/account_model.dart';
 import 'package:desafio_um/user_inputs/helper/check_the_deposit_amount.dart';
 
-String receiveDeposit({required dynamic accountModel}) {
+String receiveDeposit({required AccountModel accountModel}) {
   // quem que vai receber, ele está no parâmetro
   // tenho que definir se é corrente ou poupanca
   late final String result;
@@ -14,22 +13,26 @@ String receiveDeposit({required dynamic accountModel}) {
     receiveValueInput = '0.0';
   }
   double valueInputToDouble = double.parse(receiveValueInput);
-  //vai chegar se o valor inputado é menor que zero e maior que 5mil
+  //vai checar se o valor inputado é menor que zero e maior que 5mil
   valueInputToDouble =
       checkTheDepositAmount(valueInputToDouble: valueInputToDouble);
 
-  if (accountModel.runtimeType.toString() == 'SavingAccountModel') {
-    // depositar na conta poupanca
-    // informando pra variavel que o tipo dela é SavingAccountModel (isso se chama casting)
-    SavingAccountModel savingAccount = accountModel as SavingAccountModel;
-    savingAccount.deposit(valueInputToDouble);
-    result = valueInputToDouble.toString();
-  } else if (accountModel.runtimeType.toString() == 'CurrentAccountModel') {
-    CurrentAccountModel currentAccount = accountModel as CurrentAccountModel;
-    currentAccount.deposit(valueInputToDouble);
-    result = valueInputToDouble.toString();
-  } else {
-    return 'Falha no depósito';
-  }
+  // comentado porque o ato de fazer depósito é igual tanto na conta poupança quanto na corrente
+  // if (accountModel.runtimeType.toString() == 'SavingAccountModel') {
+  //   // depositar na conta poupanca
+  //   // informando pra variavel que o tipo dela é SavingAccountModel (isso se chama casting)
+  //   SavingAccountModel savingAccount = accountModel as SavingAccountModel;
+  //   savingAccount.deposit(valueInputToDouble);
+  //   result = valueInputToDouble.toString();
+  // } else if (accountModel.runtimeType.toString() == 'CurrentAccountModel') {
+  //   CurrentAccountModel currentAccount = accountModel as CurrentAccountModel;
+  //   currentAccount.deposit(valueInputToDouble);
+  //   result = valueInputToDouble.toString();
+  // } else {
+  //   return 'Falha no depósito';
+  // }
+  accountModel.deposit(valueInputToDouble);
+  result = valueInputToDouble.toString();
+
   return result;
 }

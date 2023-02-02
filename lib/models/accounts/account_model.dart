@@ -1,6 +1,6 @@
 import '../users/user_model.dart';
 
-class AccountModel {
+abstract class AccountModel {
   final UserModel user;
   final String agency;
   final String bankCode;

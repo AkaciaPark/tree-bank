@@ -11,7 +11,9 @@ import 'user_model_input.dart';
 
 void main() {
   stdout.writeln("Seja bem vindo ao TreeBank!");
-
+  // aqui o model do meu cartão
+  // vou ter que vincular meu cartão à minha conta
+  // minha conta tem que ter um cartão
   CardModel cardModelObject;
   UserModel userModel = userModelCreation();
   AccountModel account = accountModelInput(userModel: userModel);

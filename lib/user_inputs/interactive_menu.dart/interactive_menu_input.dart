@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
+import 'package:desafio_um/user_inputs/helper/access_only_to_current_account.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_saving_account.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_money_interactive_menu.dart';
 import '../../models/users/user_model.dart';
@@ -8,8 +9,10 @@ import '../helper/show_financial_proof.dart';
 import 'interactive_menu_option.dart';
 import 'receive_deposit_interactive_menu_input.dart';
 
-void interactiveMenu(
-    {required AccountModel accountModel, required UserModel userModel}) {
+void interactiveMenu({
+  required AccountModel accountModel,
+  required UserModel userModel,
+}) {
   String? recebeInputUsuario;
 
   const List<InterativeMenuOption> interactiveMenuOptions = [
@@ -19,7 +22,10 @@ void interactiveMenu(
     InterativeMenuOption(optionCode: '4', optionText: 'Rendimento.'),
     InterativeMenuOption(optionCode: '5', optionText: 'Pagar com débito.'),
     InterativeMenuOption(optionCode: '6', optionText: 'Pagar com crédito.'),
-    InterativeMenuOption(optionCode: 'Sair', optionText: 'Sair do Menu Interativo'),
+    InterativeMenuOption(
+      optionCode: 'Sair',
+      optionText: 'Sair do Menu Interativo',
+    ),
   ];
 
   do {
@@ -29,7 +35,7 @@ void interactiveMenu(
 
     for (var i = 0; i < interactiveMenuOptions.length - 1; i++) {
       stdout.writeln(
-          '${interactiveMenuOptions[i].optionCode} - ${interactiveMenuOptions[i].optionText} ');
+          '${interactiveMenuOptions[i].optionCode} - ${interactiveMenuOptions[i].optionText}');
     }
 
     recebeInputUsuario = stdin.readLineSync();
@@ -40,16 +46,21 @@ void interactiveMenu(
       withdrawMoney();
     } else if (recebeInputUsuario == interactiveMenuOptions[1].optionCode) {
       stdout.writeln(interactiveMenuOptions[1].optionText);
+      accessOnlyToCurrentAccount(
+          accountModel: accountModel, userModel: userModel);
     } else if (recebeInputUsuario == interactiveMenuOptions[2].optionCode) {
       stdout.writeln(interactiveMenuOptions[2].optionText);
       final valueDeposit = receiveDeposit(accountModel: accountModel);
+      
       passwordRequired(userModel: userModel);
       showFinancialProof(
-          transactionType: TransactionType.deposito,
-          transactionValue: double.parse(valueDeposit));
+        transactionType: TransactionType.deposito,
+        transactionValue: double.parse(valueDeposit),
+      );
     } else if (recebeInputUsuario == interactiveMenuOptions[3].optionCode) {
       stdout.writeln(interactiveMenuOptions[3].optionText);
-      accessOnlyToSavingAccount(accountModel: accountModel, userModel: userModel);
+      accessOnlyToSavingAccount(
+          accountModel: accountModel, userModel: userModel);
     } else if (recebeInputUsuario == interactiveMenuOptions[4].optionCode) {
       stdout.writeln(interactiveMenuOptions[4].optionText);
     } else if (recebeInputUsuario == interactiveMenuOptions[5].optionCode) {

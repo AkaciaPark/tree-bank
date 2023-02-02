@@ -1,5 +1,5 @@
 import 'dart:io';
-
+// tirar aqui do helper, não é helper! é um input
 double checkTheDepositAmount({required double valueInputToDouble}) {
   String? receiveValueInputAgain;
   bool isInputNotEmpty = receiveValueInputAgain == null || receiveValueInputAgain.trim().isEmpty;

@@ -25,24 +25,24 @@ void render(
     incomeValue = '0';
   }
 
-  //  transformando a renda mensal em double para fazer o cálculo.
+  // transformando a renda mensal em double para fazer o cálculo.
   double monthlyIncomeValue = double.parse(incomeValue);
 
   double fixedValue = 0.02;
 
-  double resultTargetTime = (monthlyIncomeValue * fixedValue) / numberOfDays;
+  double resultTargetTime = (monthlyIncomeValue * fixedValue) * numberOfDays;
   double resultHalfOfTheTime =
-      (monthlyIncomeValue * fixedValue) / (numberOfDays / 2);
+      (monthlyIncomeValue * fixedValue) * (numberOfDays / 2);
   double resultTwiceAsLong =
-      (monthlyIncomeValue * fixedValue) / (2 * numberOfDays);
+      (monthlyIncomeValue * fixedValue) * (2 * numberOfDays);
 
   passwordRequired(userModel: userModel);
 
   stdout.writeln(
-      'No período de $numberOfDays dias você terá uma rentabilidade de ${resultTargetTime.toStringAsFixed(2)}%.');
+      'No período de $numberOfDays dias você terá uma rentabilidade de ${resultTargetTime.toStringAsFixed(2)} reais.');
   stdout.writeln('Para saber mais: ');
   stdout.writeln(
-      'Com a metade do tempo escolhido você teria uma rentabilidade de ${resultHalfOfTheTime.toStringAsFixed(2)}%.');
+      'Com a metade do tempo escolhido você teria uma rentabilidade de ${resultHalfOfTheTime.toStringAsFixed(2)} reais.');
   stdout.writeln(
-      'E no dobro do período escolhido você teria uma rentabilidade de ${resultTwiceAsLong.toStringAsFixed(2)}%.');
+      'E no dobro do período escolhido você teria uma rentabilidade de ${resultTwiceAsLong.toStringAsFixed(2)} reais.');
 }

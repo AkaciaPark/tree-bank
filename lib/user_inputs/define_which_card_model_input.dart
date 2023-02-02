@@ -6,7 +6,6 @@ import 'debit_card_model_input.dart';
 import 'helper/define_limit_credit_card.dart';
 
 // fazer aqui a bifurcação do cartão - se for conta poupanca ou corrente - levar para os respectivos cartões
-
 CardModel defineWhichCard({required AccountType accountType, required UserModel userModel}) {
   bool hasMonthlyIncome = userModel.monthlyIncome != null &&
       userModel.monthlyIncome!.trim().isNotEmpty;
