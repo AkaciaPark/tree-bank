@@ -7,7 +7,7 @@ import '../../models/users/user_model.dart';
 import '../helper/password_required.dart';
 import '../helper/show_financial_proof.dart';
 import 'interactive_menu_option.dart';
-import 'receive_deposit_interactive_menu_input.dart';
+import 'deposit_receive_interactive_menu_input.dart';
 
 void interactiveMenu({
   required AccountModel accountModel,
@@ -50,7 +50,7 @@ void interactiveMenu({
           accountModel: accountModel, userModel: userModel);
     } else if (recebeInputUsuario == interactiveMenuOptions[2].optionCode) {
       stdout.writeln(interactiveMenuOptions[2].optionText);
-      final valueDeposit = receiveDeposit(accountModel: accountModel);
+      final valueDeposit = despoitReceive(accountModel: accountModel);
       passwordRequired(userModel: userModel);
       showFinancialProof(
         transactionType: TransactionType.deposito,

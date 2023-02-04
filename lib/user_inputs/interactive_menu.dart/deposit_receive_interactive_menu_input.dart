@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
-import 'package:desafio_um/user_inputs/interactive_menu.dart/check_the_deposit_amount_interactive_menu.dart';
+import 'package:desafio_um/user_inputs/interactive_menu.dart/deposit_check_the_amount_interactive_menu.dart';
 
-String receiveDeposit({required AccountModel accountModel}) {
+String despoitReceive({required AccountModel accountModel}) {
   // quem que vai receber, ele está no parâmetro
   // tenho que definir se é corrente ou poupanca
   late final String result;
@@ -15,7 +15,7 @@ String receiveDeposit({required AccountModel accountModel}) {
   double valueInputToDouble = double.parse(receiveValueInput);
   //vai checar se o valor inputado é menor que zero e maior que 5mil
   valueInputToDouble =
-      checkTheDepositAmount(valueInputToDouble: valueInputToDouble);
+      depositCheckTheAmount(valueInputToDouble: valueInputToDouble);
 
   // comentado porque o ato de fazer depósito é igual tanto na conta poupança quanto na corrente
   // if (accountModel.runtimeType.toString() == 'SavingAccountModel') {

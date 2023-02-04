@@ -1,8 +1,9 @@
 import 'dart:io';
 
-double checkTheDepositAmount({required double valueInputToDouble}) {
+double depositCheckTheAmount({required double valueInputToDouble}) {
   String? receiveValueInputAgain;
-  bool isInputNotEmpty = receiveValueInputAgain == null || receiveValueInputAgain.trim().isEmpty;
+  bool isInputNotEmpty =
+      receiveValueInputAgain == null || receiveValueInputAgain.trim().isEmpty;
 
   if (valueInputToDouble > 5000.0 || valueInputToDouble <= 0.0) {
     do {
@@ -16,7 +17,8 @@ double checkTheDepositAmount({required double valueInputToDouble}) {
         } while (!isInputNotEmpty);
       }
 
-      if (receiveValueInputAgain == null || receiveValueInputAgain.trim().isEmpty) {
+      if (receiveValueInputAgain == null ||
+          receiveValueInputAgain.trim().isEmpty) {
         receiveValueInputAgain = '0.0';
       }
       valueInputToDouble = double.parse(receiveValueInputAgain);

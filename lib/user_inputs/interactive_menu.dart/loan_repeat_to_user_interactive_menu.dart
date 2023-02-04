@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:desafio_um/user_inputs/helper/password_required.dart';
-
 import '../../models/users/user_model.dart';
 
 // vai ter que me retornar um double pra usar e colocar na fatura do cartão
