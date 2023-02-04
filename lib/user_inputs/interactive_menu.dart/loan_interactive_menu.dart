@@ -20,7 +20,8 @@ void loan({
   );
   loanRepeatToUser(
       loanCalculation: loanCalculation(
-    userModel: userModel,
-    incomeValue: incomeValue,
-  ));
+        userModel: userModel,
+        incomeValue: incomeValue,
+      ),
+      userModel: userModel);
 }

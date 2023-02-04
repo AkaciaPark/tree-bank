@@ -14,9 +14,3 @@ List<double> loanCalculation({
 
   return [minLoan, maxLoan];
 }
-
-
-
-
- 
-
