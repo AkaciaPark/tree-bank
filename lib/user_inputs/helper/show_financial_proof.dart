@@ -8,7 +8,6 @@ import 'dart:io';
 // o tipo de transação!! não o tipo de conta
 
 enum TransactionType { deposito, saque }
-// mostrar a mensagem de erro também
 void showFinancialProof(
     {required TransactionType transactionType,
     required double transactionValue}) {

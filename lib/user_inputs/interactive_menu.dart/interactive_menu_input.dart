@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_current_account.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_saving_account.dart';
+import 'package:desafio_um/user_inputs/interactive_menu.dart/deposit_interactive_menu.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_money_interactive_menu.dart';
 import '../../models/users/user_model.dart';
 import '../helper/password_required.dart';
@@ -47,19 +48,21 @@ void interactiveMenu({
     } else if (recebeInputUsuario == interactiveMenuOptions[1].optionCode) {
       stdout.writeln(interactiveMenuOptions[1].optionText);
       accessOnlyToCurrentAccount(
-          accountModel: accountModel, userModel: userModel);
+        accountModel: accountModel,
+        userModel: userModel,
+      );
     } else if (recebeInputUsuario == interactiveMenuOptions[2].optionCode) {
       stdout.writeln(interactiveMenuOptions[2].optionText);
-      final valueDeposit = despoitReceive(accountModel: accountModel);
-      passwordRequired(userModel: userModel);
-      showFinancialProof(
-        transactionType: TransactionType.deposito,
-        transactionValue: double.parse(valueDeposit),
+      deposit(
+        accountModel: accountModel,
+        userModel: userModel,
       );
     } else if (recebeInputUsuario == interactiveMenuOptions[3].optionCode) {
       stdout.writeln(interactiveMenuOptions[3].optionText);
       accessOnlyToSavingAccount(
-          accountModel: accountModel, userModel: userModel);
+        accountModel: accountModel,
+        userModel: userModel,
+      );
     } else if (recebeInputUsuario == interactiveMenuOptions[4].optionCode) {
       stdout.writeln(interactiveMenuOptions[4].optionText);
     } else if (recebeInputUsuario == interactiveMenuOptions[5].optionCode) {
