@@ -1,14 +1,19 @@
 import 'dart:io';
 
-String renderInputNumberOfDays() {
+// a função vai se tornar int
+int renderInputNumberOfDays() {
   String? inputNumberOfDays;
-  // loop para ficar pedindo a quantidade de dias
+  int? dias;
   do {
     stdout.write(
         'Para fazer o cálculo do rendimento, insira a quantidade de dias desejado: ');
     inputNumberOfDays = stdin.readLineSync();
-  } while (inputNumberOfDays == null || inputNumberOfDays.trim().isEmpty);
+    
+    if (inputNumberOfDays != null && inputNumberOfDays.trim().isNotEmpty) {
+      dias = int.tryParse(inputNumberOfDays);
+    }
+  } while (dias == null);
 
   stdout.writeln('Você escolheu $inputNumberOfDays dias.');
-  return inputNumberOfDays;
+  return dias;
 }

@@ -1,8 +1,7 @@
 import 'dart:io';
 
-// também preciso da quantidade de dias
 void renderShow(
-    {required String numberOfDays, required List<double> renderCalculation}) {
+    {required int numberOfDays, required List<double> renderCalculation}) {
   stdout.writeln(
       'No período de $numberOfDays dias você terá uma rentabilidade de ${renderCalculation[0].toStringAsFixed(2)} reais.');
   stdout.writeln('Para saber mais: ');

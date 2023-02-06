@@ -1,28 +1,29 @@
 import '../../models/users/user_model.dart';
 
-// incomeValue = result???
-List<double> renderCalculation(
-    {required UserModel userModel, required String incomeValue}) {
-  // transformando esse inputNumberOfDays em int para poder fazer o cálculo.
-  int numberOfDays = int.parse(incomeValue);
+List<double> renderCalculation({
+  // pra acessar minha renda mensal
+  required UserModel userModel,
+  // minha quantidade de dias
+  required int howManyDays,
+}) {
 
-  // caso a renda mensal venha zerado
-  if (incomeValue.trim().isEmpty) {
-    incomeValue = '0';
+  
+  String? rendaMensal = userModel.monthlyIncome.toString();
+
+  if (rendaMensal.trim().isEmpty) {
+    rendaMensal = '0';
   }
 
-  // transformando a renda mensal em double para fazer o cálculo.
-  double monthlyIncomeValue = double.parse(incomeValue);
+  double monthlyIncomeValue = double.parse(rendaMensal);
 
   double fixedValue = 0.02;
 
   final double resultTargetTime =
-      (monthlyIncomeValue * fixedValue) * numberOfDays;
+      (monthlyIncomeValue * fixedValue) * howManyDays;
   final double resultHalfOfTheTime =
-      (monthlyIncomeValue * fixedValue) * (numberOfDays / 2);
+      (monthlyIncomeValue * fixedValue) * (howManyDays / 2);
   final double resultTwiceAsLong =
-      (monthlyIncomeValue * fixedValue) * (2 * numberOfDays);
+      (monthlyIncomeValue * fixedValue) * (2 * howManyDays);
 
-  // em ordem: tempo inputado, metade do tempo, dobro do tempo
   return [resultTargetTime, resultHalfOfTheTime, resultTwiceAsLong];
 }

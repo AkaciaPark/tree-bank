@@ -12,6 +12,6 @@ void checkTheMonthlyIncomeValue({
     return;
   }
   else{
-    stdout.writeln('Acessando renda mensal com sucesso!');
+    stdout.writeln('Renda mensal acessado com sucesso!');
   }
 }
