@@ -1,13 +1,9 @@
 import '../../models/users/user_model.dart';
 
 List<double> renderCalculation({
-  // pra acessar minha renda mensal
   required UserModel userModel,
-  // minha quantidade de dias
   required int howManyDays,
 }) {
-
-  
   String? rendaMensal = userModel.monthlyIncome.toString();
 
   if (rendaMensal.trim().isEmpty) {
