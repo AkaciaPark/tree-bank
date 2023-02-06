@@ -1,6 +1,5 @@
 import '../../models/users/user_model.dart';
 
-// essa função deve APENAS fazer o cálculo do empréstimo!
 List<double> loanCalculation({
   required UserModel userModel,
   required String incomeValue,

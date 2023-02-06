@@ -21,8 +21,6 @@ void accessOnlyToSavingAccount({
     );
   } else {
     accessDeniedForAccountType(
-      accountModel: accountModel,
-      userModel: userModel,
     );
   }
 }

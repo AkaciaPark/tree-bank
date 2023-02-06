@@ -15,9 +15,6 @@ void accessOnlyToCurrentAccount({
     );
     return;
   } else {
-    accessDeniedForAccountType(
-      accountModel: accountModel,
-      userModel: userModel,
-    );
+    accessDeniedForAccountType();
   }
 }
