@@ -24,7 +24,6 @@ AccountModel accountModelInput({required UserModel userModel}) {
   String numberBankAccount = generateRandomNumber(interactionsNumber: 7);
   stdout.writeln('O número da conta bancária é $numberBankAccount.');
 
-
   stdout.writeln('Saldo inicial: R\$ 0,00');
 
 // devo criar um objeto currentAccountModel se o usuário selecionou corrente

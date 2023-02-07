@@ -15,6 +15,7 @@ void main() {
   // vou ter que vincular meu cartão à minha conta
   // minha conta tem que ter um cartão
   CardModel cardModelObject;
+
   UserModel userModel = userModelCreation();
   AccountModel account = accountModelInput(userModel: userModel);
 
@@ -28,7 +29,10 @@ void main() {
     cardModelObject =
         defineWhichCard(accountType: AccountType.saving, userModel: userModel);
   }
-  interactiveMenu(accountModel: account, userModel: userModel);
+  interactiveMenu(
+    accountModel: account,
+    userModel: userModel,
+  );
 
 // eu preciso dos objetos dos meus cartões - pensar nisso depois
 }

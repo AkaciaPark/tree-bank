@@ -11,7 +11,12 @@ class CurrentAccountModel extends AccountModel{
   });
   
   // empréstimo
-  void loan(){
+  // pego o valor do empréstimo que foi feito e atribuo ele no saldo
+  double loan({required double userChoiceValue}){
+    // vou somar meu empréstimo feito ao meu saldo
+    // saldo total += userChoiceValue
+     balance += userChoiceValue;
+     return balance;
   }
 
   }

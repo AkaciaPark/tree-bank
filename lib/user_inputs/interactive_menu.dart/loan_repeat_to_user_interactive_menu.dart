@@ -3,11 +3,11 @@ import 'package:desafio_um/user_inputs/helper/password_required.dart';
 import '../../models/users/user_model.dart';
 
 // vai ter que me retornar um double pra usar e colocar na fatura do cartão
-void loanRepeatToUser(
+double loanRepeatToUser(
     {required UserModel userModel, required List<double> loanCalculation}) {
   String? userChoice;
   double userChoiceValue;
-  //bool isUserChoiceValid = userChoice == null || userChoice.trim().isEmpty;
+
   do {
     stdout.writeln(
       'Sua faixa de empréstimo é de R\$${loanCalculation[0].ceilToDouble()} a R\$${loanCalculation[1].ceilToDouble()}.',
@@ -33,4 +33,6 @@ void loanRepeatToUser(
     }
   } while (userChoiceValue < loanCalculation[0] ||
       userChoiceValue > loanCalculation[1]);
+
+  return userChoiceValue;
 }

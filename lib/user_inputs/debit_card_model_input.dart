@@ -20,7 +20,7 @@ CardModel createCardModel({required UserModel userModel}) {
     numberAccount: cardNumber,
     cardFlag: 'leaf',
     cvv: cvvNumber,
-    nameAccount: userModel.name, //nome do dono
+    nameAccount: userModel.name,
     validThru: 10,
   );
 

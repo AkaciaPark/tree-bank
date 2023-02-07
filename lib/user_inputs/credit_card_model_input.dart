@@ -4,7 +4,8 @@ import '../models/cards/card_model.dart';
 import '../models/users/user_model.dart';
 import 'helper/generate_random_number.dart';
 
-//função de criação de cartão de crédito
+// função de criação de cartão de crédito
+// acho que minha conta precisa do cartão
 CardModel createCreditCard({required UserModel userModel, required double limit}) {
 
   stdout.writeln('---- Criado um cartão de DÉBITO e CRÉDITO! ----');
@@ -21,7 +22,7 @@ CardModel createCreditCard({required UserModel userModel, required double limit}
     numberAccount: cardNumber,
     cardFlag: 'leaf',
     cvv: cvvNumber,
-    nameAccount: userModel.name, //nome do dono
+    nameAccount: userModel.name,
     validThru: 10,
     limit: limit,
     amountSpent: 0,

@@ -10,6 +10,7 @@ import 'interactive_menu_option.dart';
 void interactiveMenu({
   required AccountModel accountModel,
   required UserModel userModel,
+
 }) {
   String? recebeInputUsuario;
 
@@ -48,6 +49,7 @@ void interactiveMenu({
       accessOnlyToCurrentAccount(
         accountModel: accountModel,
         userModel: userModel,
+        
       );
     } else if (recebeInputUsuario == interactiveMenuOptions[2].optionCode) {
       stdout.writeln(interactiveMenuOptions[2].optionText);
