@@ -15,7 +15,10 @@ abstract class AccountModel {
     required this.balance,
   });
 
-  void withdrawMoney() {}
+  double withdrawMoney(double valueToWithdraw) {
+    balance -= valueToWithdraw;
+    return balance;
+  }
 
   double deposit(double valueToDeposit) {
     balance += valueToDeposit;

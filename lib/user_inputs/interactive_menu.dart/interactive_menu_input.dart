@@ -3,7 +3,7 @@ import 'package:desafio_um/models/accounts/account_model.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_current_account.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_saving_account.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/deposit_interactive_menu.dart';
-import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_money_interactive_menu.dart';
+import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_interactive_menu.dart';
 import '../../models/users/user_model.dart';
 import 'interactive_menu_option.dart';
 
@@ -41,7 +41,7 @@ void interactiveMenu({
     if (recebeInputUsuario == interactiveMenuOptions[0].optionCode) {
       stdout.writeln(interactiveMenuOptions[0].optionText);
 
-      withdrawMoney();
+      withdraw(accountModel: accountModel, userModel: userModel);
     } else if (recebeInputUsuario == interactiveMenuOptions[1].optionCode) {
       stdout.writeln(interactiveMenuOptions[1].optionText);
 
@@ -72,6 +72,5 @@ void interactiveMenu({
       print("\x1B[2J\x1B[0;0H");
       stdout.write(interactiveMenuOptions[6].optionText);
     }
-
   } while (recebeInputUsuario != '7');
 }
