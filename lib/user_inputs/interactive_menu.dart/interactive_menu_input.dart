@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
+import 'package:desafio_um/models/cards/credit_card_model.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_current_account.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_saving_account.dart';
+import 'package:desafio_um/user_inputs/helper/define_limit_credit_card.dart';
+import 'package:desafio_um/user_inputs/interactive_menu.dart/credit_card_payment_interactive_menu.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/debit_card_payment_interactive_menu.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/deposit_interactive_menu.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_interactive_menu.dart';
@@ -70,9 +73,14 @@ void interactiveMenu({
       stdout.writeln(interactiveMenuOptions[4].optionText);
 
       debitCardPayment(accountModel: accountModel, userModel: userModel);
-      
     } else if (recebeInputUsuario == interactiveMenuOptions[5].optionCode) {
       stdout.writeln(interactiveMenuOptions[5].optionText);
+
+      creditCardPayment(
+        accountModel: accountModel,
+        userModel: userModel,
+        limit: defineLimitCreditCard(incomeValue: userModel.monthlyIncome!),
+      );
     } else {
       //limpa o terminal :P
       print("\x1B[2J\x1B[0;0H");
