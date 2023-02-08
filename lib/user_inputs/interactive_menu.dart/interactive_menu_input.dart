@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:desafio_um/models/accounts/account_model.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_current_account.dart';
 import 'package:desafio_um/user_inputs/helper/access_only_to_saving_account.dart';
+import 'package:desafio_um/user_inputs/interactive_menu.dart/debit_card_payment_interactive_menu.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/deposit_interactive_menu.dart';
 import 'package:desafio_um/user_inputs/interactive_menu.dart/withdraw_interactive_menu.dart';
 import '../../models/users/user_model.dart';
@@ -10,7 +11,6 @@ import 'interactive_menu_option.dart';
 void interactiveMenu({
   required AccountModel accountModel,
   required UserModel userModel,
-
 }) {
   String? recebeInputUsuario;
 
@@ -19,8 +19,10 @@ void interactiveMenu({
     InterativeMenuOption(optionCode: '2', optionText: 'Empréstimo.'),
     InterativeMenuOption(optionCode: '3', optionText: 'Depósito.'),
     InterativeMenuOption(optionCode: '4', optionText: 'Rendimento.'),
-    InterativeMenuOption(optionCode: '5', optionText: 'Pagar com débito.'),
-    InterativeMenuOption(optionCode: '6', optionText: 'Pagar com crédito.'),
+    InterativeMenuOption(
+        optionCode: '5', optionText: 'Pagar com cartão de débito.'),
+    InterativeMenuOption(
+        optionCode: '6', optionText: 'Pagar com cartão de crédito.'),
     InterativeMenuOption(
       optionCode: '7',
       optionText: 'Sair do Menu Interativo',
@@ -49,7 +51,6 @@ void interactiveMenu({
       accessOnlyToCurrentAccount(
         accountModel: accountModel,
         userModel: userModel,
-        
       );
     } else if (recebeInputUsuario == interactiveMenuOptions[2].optionCode) {
       stdout.writeln(interactiveMenuOptions[2].optionText);
@@ -67,6 +68,9 @@ void interactiveMenu({
       );
     } else if (recebeInputUsuario == interactiveMenuOptions[4].optionCode) {
       stdout.writeln(interactiveMenuOptions[4].optionText);
+
+      debitCardPayment(accountModel: accountModel, userModel: userModel);
+      
     } else if (recebeInputUsuario == interactiveMenuOptions[5].optionCode) {
       stdout.writeln(interactiveMenuOptions[5].optionText);
     } else {

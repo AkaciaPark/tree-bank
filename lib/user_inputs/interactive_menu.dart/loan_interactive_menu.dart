@@ -29,6 +29,6 @@ void loan({
       ),
       userModel: userModel);
 
-stdout.writeln('O valor do seu saldo total(saldo + empréstimo) é de ${currentAccountModel.loan(userChoiceValue: result)}');
+stdout.writeln('O valor do seu saldo total(saldo + empréstimo) é de R\$${currentAccountModel.loan(userChoiceValue: result)}.');
   
 }
