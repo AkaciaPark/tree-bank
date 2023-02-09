@@ -79,7 +79,6 @@ void interactiveMenu({
       creditCardPayment(
         accountModel: accountModel,
         userModel: userModel,
-        limit: defineLimitCreditCard(incomeValue: userModel.monthlyIncome!),
       );
     } else {
       //limpa o terminal :P

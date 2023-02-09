@@ -1,3 +1,5 @@
+import 'package:desafio_um/models/cards/card_model.dart';
+
 import '../users/user_model.dart';
 
 abstract class AccountModel {
@@ -5,6 +7,7 @@ abstract class AccountModel {
   final String agency;
   final String bankCode;
   final String accountNumber;
+  final CardModel cardModel;
   double balance;
 
   AccountModel({
@@ -13,6 +16,7 @@ abstract class AccountModel {
     required this.bankCode,
     required this.accountNumber,
     required this.balance,
+    required this.cardModel,
   });
 
   double withdrawMoney(double valueToWithdraw) {

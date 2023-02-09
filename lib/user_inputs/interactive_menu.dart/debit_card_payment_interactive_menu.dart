@@ -27,8 +27,11 @@ void debitCardPayment(
           'Operação cancelada, pois você não possui todo esse saldo para fazer o pagamento.');
     }
   } while (inputValueDouble > accountModel.balance);
+
   passwordRequired(userModel: userModel);
+
   accountModel.balance -= inputValueDouble;
+  
   stdout.writeln(
       'Agora você possui ${accountModel.balance} reais no seu cartão de débito.');
 }

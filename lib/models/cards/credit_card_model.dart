@@ -4,7 +4,7 @@ class CreditCardModel extends CardModel{
 
   double limit;
   double amountSpent;
-
+  double get limiteDisponivel => limit - amountSpent;
   CreditCardModel({
     required super.cardFlag,
     required super.cvv,

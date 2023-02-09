@@ -1,8 +1,10 @@
 import 'dart:io';
 
 double defineLimitCreditCard({required String incomeValue}) {
-  stdout.writeln('Valor gasto inicial R\$0,0\n');
   double limit = 0;
+  if (incomeValue.trim().isEmpty) {
+    incomeValue = '0';
+  }
   double monthlyIncomeValue = double.parse(incomeValue);
 
   if (monthlyIncomeValue <= 1000) {

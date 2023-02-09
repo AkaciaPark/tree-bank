@@ -1,8 +1,11 @@
+import 'package:desafio_um/models/accounts/current_account_model.dart';
+
 import '../../models/users/user_model.dart';
 
 List<double> loanCalculation({
   required UserModel userModel,
   required String incomeValue,
+
 }) {
   double monthlyIncomeValue = double.parse(incomeValue);
   double maxFixedLoan = 0.7;

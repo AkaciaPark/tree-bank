@@ -8,6 +8,7 @@ class SavingAccountModel extends AccountModel {
     required super.balance,
     required super.bankCode,
     required super.user,
+    required super.cardModel,
   });
   // rendimento
   void render() {}

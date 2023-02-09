@@ -9,7 +9,6 @@ void loan({
   required UserModel userModel,
   required String incomeValue,
   required CurrentAccountModel currentAccountModel,
-
 }) {
   stdout.writeln('Bem vindo a Empréstimos!');
 
@@ -17,18 +16,20 @@ void loan({
     userModel: userModel,
     incomeValue: userModel.monthlyIncome!,
   );
-  loanCalculation(
-    userModel: userModel,
-    incomeValue: incomeValue,
-  );
+ 
   // o result é o retorno do valor que o usuário escolheu e precisa entrar no cartão
   final result = loanRepeatToUser(
-      loanCalculation: loanCalculation(
-        userModel: userModel,
-        incomeValue: incomeValue,
-      ),
-      userModel: userModel);
+    loanCalculation: loanCalculation(
+      userModel: userModel,
+      incomeValue: incomeValue,
+    ),
+    userModel: userModel,
+    currentAccountModel: currentAccountModel,
+  );
 
-stdout.writeln('O valor do seu saldo total(saldo + empréstimo) é de R\$${currentAccountModel.loan(userChoiceValue: result)}.');
-  
+  // tenho que colocar uma logica a mais e vincular com o cartão
+  // aumentar o saldo e o aument spend --> vai ser o valor gasto no total
+
+  stdout.writeln(
+      'O valor do seu saldo total(saldo + empréstimo) é de R\$${currentAccountModel.loan(userChoiceValue: result)}.');
 }
